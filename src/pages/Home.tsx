@@ -35,8 +35,8 @@ const Home = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8 }}
-                className="horror-title text-center mb-16"
-                style={{ fontSize: '3rem', textShadow: '1px 1px 2px rgba(255, 204, 0, 0.5)', '@media (min-width: 640px)': { fontSize: '4rem' }, '@media (min-width: 768px)': { fontSize: '5rem' }, '@media (min-width: 1024px)': { fontSize: '6rem' } }}
+                className="horror-title text-3xl md:text-5xl font-bold text-center"
+                style={{ textAlign: 'center', margin: '0 auto', textShadow: '1px 1px 2px rgba(255, 204, 0, 0.5)', '@media (min-width: 640px)': { fontSize: '4rem' }, '@media (min-width: 768px)': { fontSize: '5rem' }, '@media (min-width: 1024px)': { fontSize: '6rem' } }}
               >
                 Welcome to GothicTales
               </motion.h2>

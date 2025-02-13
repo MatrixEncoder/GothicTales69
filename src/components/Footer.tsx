@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   const footerStyle = {
     height: 'auto', 
-    padding: '5px 5px', 
+    padding: '10px', 
+    textAlign: 'center',
     backgroundColor: '#000000',
   };
 
