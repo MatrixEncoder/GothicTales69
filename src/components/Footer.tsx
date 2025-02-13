@@ -1,17 +1,10 @@
 import React from 'react';
-import { GithubIcon, Skull, InstagramIcon } from 'lucide-react';
+import { GithubIcon, Skull, InstagramIcon, Phone, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
-  const footerStyle = {
-    height: 'auto', 
-    padding: '10px', 
-    textAlign: 'center',
-    backgroundColor: '#000000',
-  };
-
   return (
-    <footer style={footerStyle} className="border-t border-blood-red/20 w-full fixed bottom-0">
+    <footer style={{ padding: '10px', textAlign: 'center', backgroundColor: '#000000' }} className="border-t border-blood-red/20 fixed bottom-0 left-0 right-0 md:h-[15vh] h-[10vh]">
       <div className="container mx-auto px-4 flex flex-col items-center">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
           <div>
@@ -38,13 +31,18 @@ const Footer = () => {
               <a href="https://www.instagram.com/illusionist__666" target="_blank" rel="noopener noreferrer">
                 <InstagramIcon className="w-6 h-6 text-blood-red" />
               </a>
+              <a href="tel:+919125916986" target="_blank" rel="noopener noreferrer">
+                <Phone className="w-6 h-6 text-blood-red" />
+              </a>
+              <a href="mailto:suryanshsri69.gdscmmmut@gmail.com" target="_blank" rel="noopener noreferrer">
+                <Mail className="w-6 h-6 text-blood-red" />
+              </a>
             </div>
-            
           </div>
         </div>
         
         <div className="mt-4 pt-2 border-t border-blood-red/20 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} GothicTales. All rights reserved.</p>
+          <p style={{ fontSize: '12px', margin: '0' }}>&copy; {new Date().getFullYear()} GothicTales. All rights reserved.</p>
         </div>
       </div>
     </footer>
