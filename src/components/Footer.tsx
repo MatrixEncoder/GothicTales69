@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer style={{ padding: '10px', textAlign: 'center', backgroundColor: '#000000' }} className="border-t border-blood-red/20 fixed bottom-0 left-0 right-0 md:h-[15vh] h-[20vh]">
+    <footer style={{ padding: '10px', textAlign: 'center', backgroundColor: '#000000', maxHeight: '20vh', overflowY: 'auto' }} className="border-t border-blood-red/20 fixed bottom-0 left-0 right-0 md:h-[15vh] h-[20vh]">
       <div className="container mx-auto px-4 flex flex-col items-center">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
           <div>
