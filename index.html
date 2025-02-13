@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/skull.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GothicTales - Your Portal to Horror</title>
+  </head>
+  <body>
+    <audio src="src/assets/bg-sound.mp3" autoplay loop></audio>
+    <script>
+      const audio = document.querySelector('audio');
+      audio.volume = 0.02; // Set volume to 2%
+    </script>
+    <audio src="src/assets/bg-sound.mp3" autoplay loop></audio>
+    <div id="root"></div>
+    <div class="blood-splatter"></div>
+    <div class="fog"></div>
+    <svg style="position: absolute; pointer-events: none; opacity: 0">
+      <filter id="turbulence">
+        <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="3">
+          <animate attributeName="baseFrequency" dur="60s" values="0.01;0.02;0.01" repeatCount="indefinite" />
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" scale="30" />
+      </filter>
+    </svg>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

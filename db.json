@@ -1,0 +1,43 @@
+{
+  "stories": [
+    {
+      "id": 1,
+      "title": "The Hook Man",
+      "category": "legend",
+      "content": "On a dark night, a young couple parked in a secluded area...",
+      "location": "United States",
+      "era": "1950s",
+      "views": 1234,
+      "likes": 567
+    },
+    {
+      "id": 2,
+      "title": "The Zodiac Mystery",
+      "category": "true-crime",
+      "content": "The case that haunted California for years...",
+      "year": "1968-1969",
+      "location": "California",
+      "views": 2345,
+      "likes": 890
+    },
+    {
+      "id": 3,
+      "title": "Slender Man",
+      "category": "creepypasta",
+      "content": "In the shadows of the forest, a tall figure lurks...",
+      "author": "Victor Surge",
+      "year": "2009",
+      "views": 3456,
+      "likes": 1234
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "storyId": 1,
+      "author": "HorrorFan123",
+      "content": "This story kept me up all night!",
+      "createdAt": "2024-02-20T12:00:00Z"
+    }
+  ]
+}

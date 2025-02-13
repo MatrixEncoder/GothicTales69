@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Nosifer&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --blood-red: #8B0000;
+  --shadow-black: #1a1a1a;
+  --mist-gray: #2c2c2c;
+  --neon-red: #ff0000;
+}
+
+body {
+  background-color: var(--shadow-black);
+  color: #e0e0e0;
+  font-family: 'Crimson Text', serif;
+  cursor: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z' stroke='%238B0000' stroke-width='2'/%3E%3C/svg%3E"), auto;
+}
+
+/* Blood drip animation */
+.blood-drip::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 0;
+  background: var(--blood-red);
+  animation: drip 2s ease-in-out infinite;
+}
+
+.enhanced-blood::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(to bottom, var(--blood-red) 0%, transparent 100%);
+  filter: blur(4px);
+  opacity: 0.6;
+}
+
+@keyframes drip {
+  0% {
+    height: 0;
+    opacity: 1;
+  }
+  70% {
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    height: 30px;
+    opacity: 0;
+  }
+}
+
+/* Bone-shaped scrollbar */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--shadow-black);
+  border: 2px solid var(--blood-red);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--blood-red);
+  border-radius: 10px;
+  border: 2px solid var(--shadow-black);
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='60' viewBox='0 0 20 60' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 0C7 0 5 2 5 5C5 8 7 10 10 10C13 10 15 8 15 5C15 2 13 0 10 0ZM10 50C7 50 5 52 5 55C5 58 7 60 10 60C13 60 15 58 15 55C15 52 13 50 10 50Z' fill='%231a1a1a'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a00000;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Flicker animation */
+@keyframes flicker {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: 1;
+  }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.4;
+  }
+}
+
+.animate-flicker {
+  animation: flicker 1.5s infinite alternate;
+}
+
+@layer components {
+  .horror-title {
+    @apply font-horror text-4xl md:text-5xl lg:text-6xl text-blood-red relative animate-flicker;
+    text-shadow: 
+      0 0 7px var(--blood-red),
+      0 0 10px var(--blood-red),
+      0 0 21px var(--blood-red),
+      0 0 42px var(--neon-red),
+      0 0 82px var(--neon-red),
+      0 0 92px var(--neon-red),
+      0 0 102px var(--neon-red),
+      0 0 151px var(--neon-red);
+  }
+  
+  .horror-card {
+    @apply bg-mist-gray/50 backdrop-blur-sm border border-blood-red/20 rounded-lg 
+           shadow-lg shadow-blood-red/10 hover:shadow-blood-red/30 transition-all 
+           duration-300 overflow-hidden relative cursor-pointer;
+  }
+
+  .horror-button {
+    @apply px-6 py-3 bg-blood-red text-white rounded hover:bg-blood-red/80 
+           transition-colors duration-300 font-semibold relative overflow-hidden
+           text-lg uppercase tracking-wider;
+  }
+
+  .nav-link {
+    @apply text-gray-300 hover:text-blood-red transition-colors duration-300 relative;
+  }
+
+  .blood-hover {
+    @apply before:content-[''] before:absolute before:top-0 before:left-1/2 
+           before:w-0.5 before:h-0 before:bg-blood-red hover:before:animate-drip;
+  }
+
+  .creepy-text {
+    @apply font-horror text-blood-red animate-flicker;
+  }
+}
+
+/* Blood splatter effect */
+.blood-splatter {
+  position: fixed;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='40' fill='%238B0000' fill-opacity='0.1'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+  opacity: 0.1;
+}
+
+/* Fog effect */
+.fog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(26, 26, 26, 0.2) 0%,
+      rgba(26, 26, 26, 0.3) 50%,
+      rgba(26, 26, 26, 0.2) 100%
+    );
+  filter: url('#turbulence');
+  animation: fog 10s infinite;
+  opacity: 0.5;
+}
+
+@keyframes fog {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+.main-content {
+  margin-bottom: 400px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 40;
+}
+
+/* Story detail modal */
+.story-modal {
+  @apply fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm;
+}
+
+.story-modal-content {
+  @apply bg-mist-gray/95 rounded-lg max-w-4xl w-full max-h-[80vh] overflow-y-auto p-8 relative;
+  border: 2px solid var(--blood-red);
+  box-shadow: 0 0 20px rgba(139, 0, 0, 0.3);
+}
