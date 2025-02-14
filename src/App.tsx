@@ -9,6 +9,7 @@ import TrueCrime from './pages/TrueCrime';
 import Creepypasta from './pages/Creepypasta';
 import SubmitStory from './pages/SubmitStory';
 import Privacy from './pages/Privacy';
+import YourStories from './pages/YourStories';
 import { Skull } from 'lucide-react';
 import bgMusic from './assets/bg-sound.mp3';
 
@@ -34,6 +35,7 @@ function App() {
             <Route path="/true-crime" element={<TrueCrime />} />
             <Route path="/creepypasta" element={<Creepypasta />} />
             <Route path="/submit" element={<SubmitStory />} />
+            <Route path="/your-stories" element={<YourStories />} />
             <Route path="/privacy" element={<Privacy />} />
           </Routes>
         </main>

@@ -19,6 +19,7 @@ const Navbar = () => {
             <Link to="/legends" className="nav-link">Urban Legends</Link>
             <Link to="/true-crime" className="nav-link">True Crime</Link>
             <Link to="/creepypasta" className="nav-link">Creepypasta</Link>
+            <Link to="/your-stories" className="nav-link">Your Stories</Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -42,6 +43,9 @@ const Navbar = () => {
               </Link>
               <Link to="/creepypasta" className="nav-link" onClick={() => setIsOpen(false)}>
                 Creepypasta
+              </Link>
+              <Link to="/your-stories" className="nav-link" onClick={() => setIsOpen(false)}>
+                Your Stories
               </Link>
             </div>
           </div>
