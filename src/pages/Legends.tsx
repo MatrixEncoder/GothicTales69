@@ -8,7 +8,22 @@ const LEGENDS = [
     id: 1,
     title: "The Hook Man",
     excerpt: "This urban legend became popular in the 1950s and continues to be told around campfires to this day. It serves as a warning about the dangers of isolated places and the vulnerability of young couples.",
-    content: `This urban legend became popular in the 1950s and continues to be told around campfires to this day. It serves as a warning about the dangers of isolated places and the vulnerability of young couples.`,
+    content: `The popular urban legend of The Hookman tells the story of a "hook-handed lunatic" who escapes from a local institution in Pennsylvania, USA.  
+
+The terrifying campsite story began circulating in the 1950s and has many variations, but the basic story has remained the same, give or take a few elements.  
+
+The tale of The Hookman starts with a young couple who goes for a drive and gets to know about the escaped hooked man on radio. Later, the couple returns home only to find a hook embedded in the back of their car.  
+
+The Business Standard Google News Keep updated, follow The Business Standard's Google news channel
+It is believed that The Hookman kills innocent people, especially young couples, roaming around at night. Historians have been trying to find out the origin story of The Hookman for many years. 
+
+The mythical story became very popular among American teenagers by 1959, and continued to expand into the 1960s.  
+
+According to some writers and investigative journalists, the urban legend is linked to a few infamous murder cases, including the 1946 Texarkana Moonlight Murders. 
+
+Folklorists have interpreted the long history of this legend in many ways. In 1960, the story was reprinted in the acclaimed advice column "Dear Abby" and referenced in various horror films ever since.  
+
+This urban legend became popular in the 1950s and continues to be told around campfires to this day. It serves as a warning about the dangers of isolated places and the vulnerability of young couples.`,
     location: "United States",
     era: "1950s",
     image: "https://img.freepik.com/free-photo/spooky-male-pirate-with-long-beard-holding-mace-black-background-halloween-outfit_482257-11644.jpg?ga=GA1.1.1078444035.1720879008&semt=ais_hybrid"
