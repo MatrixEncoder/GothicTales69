@@ -61,7 +61,11 @@ const Home = () => {
             className="flex justify-center space-x-6"
           >
             <Link to="/legends" className="horror-button group">
-              <span>Enter If You Dare</span>
+              <span onClick={() => {
+                const audio = document.getElementById('bg-audio') as HTMLAudioElement;
+                audio.muted = false;
+                audio.play();
+              }}>Enter If You Dare</span>
               <div className="blood-drip absolute top-0 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100" />
             </Link>
           </motion.div>

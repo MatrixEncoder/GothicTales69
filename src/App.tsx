@@ -14,12 +14,10 @@ import { Skull } from 'lucide-react';
 import bgMusic from './assets/bg-sound.mp3';
 
 function App() {
+  console.log('Audio element should be rendered');
   return (
     <Router>
-      <audio autoPlay loop>
-        <source src={bgMusic} type="audio/mp3" />
-        Your browser does not support the audio element.
-      </audio>
+      <audio id="bg-audio" src={bgMusic} autoPlay loop muted></audio>
       <div className="min-h-screen bg-shadow-black flex flex-col pb-[400px]">
         <div className="fixed top-4 left-4 z-50">
           <Skull className="text-blood-red w-8 h-8 animate-float" />
