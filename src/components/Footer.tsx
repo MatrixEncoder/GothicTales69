@@ -1,6 +1,8 @@
 import React from 'react';
 import { GithubIcon, Skull, InstagramIcon, Phone, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
   return (
@@ -30,6 +32,9 @@ const Footer = () => {
               </a>
               <a href="https://www.instagram.com/illusionist__666" target="_blank" rel="noopener noreferrer">
                 <InstagramIcon className="w-6 h-6 text-blood-red" />
+              </a>
+              <a href="https://www.linkedin.com/in/suryansh-srivastava-746113292" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6 text-blood-red" />
               </a>
               <a href="tel:+919125916986" target="_blank" rel="noopener noreferrer">
                 <Phone className="w-6 h-6 text-blood-red" />
