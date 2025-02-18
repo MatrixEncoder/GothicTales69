@@ -130,6 +130,20 @@ export default function SubmitPage() {
             Submit Your Gothic Tale
           </h1>
 
+          <style>
+            {`
+              input, textarea, select {
+                color: #8B0000; /* Blood-red color */
+                text-shadow: 0 0 5px rgba(139, 0, 0, 0.8), 0 0 10px rgba(139, 0, 0, 0.6);
+                background-color: #1E1E1E; /* Darker gray background */
+                font-weight: 900; /* Thicker font */
+              }
+              input:focus, textarea:focus, select:focus {
+                text-shadow: 0 0 10px rgba(139, 0, 0, 0.8), 0 0 20px rgba(139, 0, 0, 0.6);
+              }
+            `}
+          </style>
+
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             <div>
               <label htmlFor="title" className="block text-gothic-300 mb-2">
@@ -138,7 +152,7 @@ export default function SubmitPage() {
               <input 
                 {...register('title')}
                 id="title"
-                className="w-full bg-gothic-900/50 border border-red-900/20 text-gothic-300 rounded-lg p-3"
+                className="w-full bg-gothic-900/50 border border-red-900/20 rounded-lg p-3"
                 placeholder="The Whispers in the Shadows"
               />
               {errors.title && (
@@ -153,7 +167,7 @@ export default function SubmitPage() {
               <input 
                 {...register('author')}
                 id="author"
-                className="w-full bg-gothic-900/50 border border-red-900/20 text-gothic-300 rounded-lg p-3"
+                className="w-full bg-gothic-900/50 border border-red-900/20 rounded-lg p-3"
                 placeholder="Your Haunting Pseudonym"
               />
               {errors.author && (
@@ -169,7 +183,7 @@ export default function SubmitPage() {
                 {...register('content')}
                 id="content"
                 rows={6}
-                className="w-full bg-gothic-900/50 border border-red-900/20 text-gothic-300 rounded-lg p-3"
+                className="w-full bg-gothic-900/50 border border-red-900/20 rounded-lg p-3"
                 placeholder="Describe the horrors that haunt your imagination..."
               />
               {errors.content && (
@@ -184,7 +198,13 @@ export default function SubmitPage() {
               <select 
                 {...register('genre')}
                 id="genre"
-                className="w-full bg-gothic-900/50 border border-red-900/20 text-gothic-300 rounded-lg p-3"
+                className="w-full bg-gothic-900/50 border border-red-900/20 rounded-lg p-3"
+                style={{
+                  color: '#8B0000', 
+                  textShadow: '0 0 5px rgba(139, 0, 0, 0.8), 0 0 10px rgba(139, 0, 0, 0.6)',
+                  backgroundColor: '#1E1E1E', 
+                  fontWeight: 900
+                }}
               >
                 <option value="">Select a Genre</option>
                 <option value="horror">Horror</option>
@@ -201,7 +221,7 @@ export default function SubmitPage() {
               <input 
                 {...register('location')}
                 id="location"
-                className="w-full bg-gothic-900/50 border border-red-900/20 text-gothic-300 rounded-lg p-3"
+                className="w-full bg-gothic-900/50 border border-red-900/20 rounded-lg p-3"
                 placeholder="Where did this occur?"
               />
               {errors.location && (
@@ -217,7 +237,7 @@ export default function SubmitPage() {
                 {...register('date')}
                 id="date"
                 type="date"
-                className="w-full bg-gothic-900/50 border border-red-900/20 text-gothic-300 rounded-lg p-3"
+                className="w-full bg-gothic-900/50 border border-red-900/20 rounded-lg p-3"
               />
               {errors.date && (
                 <p className="text-red-500 mt-1">{errors.date.message}</p>
@@ -231,7 +251,7 @@ export default function SubmitPage() {
               <input 
                 {...register('witness')}
                 id="witness"
-                className="w-full bg-gothic-900/50 border border-red-900/20 text-gothic-300 rounded-lg p-3"
+                className="w-full bg-gothic-900/50 border border-red-900/20 rounded-lg p-3"
                 placeholder="Your name or 'Anonymous'"
               />
               {errors.witness && (
@@ -259,6 +279,8 @@ export default function SubmitPage() {
               {isSubmitting ? 'Summoning Your Tale...' : 'Submit Dark Tale'}
             </button>
           </form>
+
+          {/* Test Submit Button Removed */}
         </motion.div>
       </div>
     </PageTransition>

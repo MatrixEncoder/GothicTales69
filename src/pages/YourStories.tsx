@@ -3,7 +3,7 @@ import React from 'react';
 const YourStories = () => {
     return (
         <div className="your-stories">
-            <header style={{ textAlign: 'center' }}>
+            <header className="flicker" style={{ textAlign: 'center' }}>
                 <h1 className="legends-heading">Your Stories</h1>
                 <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet"/>
                 <link href="https://fonts.googleapis.com/css2?family=Eater&display=swap" rel="stylesheet"/>
@@ -40,6 +40,48 @@ const YourStories = () => {
                 {`
                     .story-text {
                         font-family: 'Eater', cursive;
+                    }
+                `}
+            </style>
+            <style>
+                {`
+                    .flicker {
+                        animation: lightbulb-flicker 1s infinite;
+                    }
+                    @keyframes lightbulb-flicker {
+                        0% {
+                            opacity: 1;
+                        }
+                        10% {
+                            opacity: 0.8;
+                        }
+                        20% {
+                            opacity: 1;
+                        }
+                        30% {
+                            opacity: 0.9;
+                        }
+                        40% {
+                            opacity: 1;
+                        }
+                        50% {
+                            opacity: 0.6;
+                        }
+                        60% {
+                            opacity: 1;
+                        }
+                        70% {
+                            opacity: 0.8;
+                        }
+                        80% {
+                            opacity: 1;
+                        }
+                        90% {
+                            opacity: 0.9;
+                        }
+                        100% {
+                            opacity: 1;
+                        }
                     }
                 `}
             </style>
