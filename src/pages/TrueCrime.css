@@ -1,0 +1,8 @@
+.true-crime-bg {
+  background-image: url('../assets/truecrime.jpeg');
+  background-size: contain; /* Changed from 'cover' to 'contain' */
+  background-position: center;
+  opacity: 1; /* Set opacity to 1 for full visibility */
+  height: 100vh; /* Full height */
+  width: 100%;
+}
