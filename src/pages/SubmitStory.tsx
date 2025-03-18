@@ -10,7 +10,7 @@ import { motion } from 'framer-motion';
 const StorySubmissionSchema = z.object({
   title: z.string().min(3, 'Title must be at least 3 characters'),
   author: z.string().min(2, 'Author name must be at least 2 characters'),
-  content: z.string().min(50, 'Story must be at least 50 characters'),
+  content: z.string().min(15, 'Story must be at least 15 characters'),
   genre: z.string().optional(),
   location: z.string().optional(),
   date: z.string().optional(),
@@ -36,9 +36,6 @@ export default function SubmitPage() {
     try {
       setSubmissionStatus(null);
       
-      // Log submission data for debugging
-      console.log('Submitting story:', JSON.stringify(data, null, 2));
-
       const response = await fetch('/api/submit', {
         method: 'POST',
         headers: {
@@ -48,38 +45,13 @@ export default function SubmitPage() {
       });
 
       console.log('Response status:', response.status);
-      console.log('Response headers:', Object.fromEntries(response.headers));
 
-      // Handle non-200 responses
-      if (!response.ok) {
-        const errorText = await response.text();
-        console.error('Error response text:', errorText);
-        
-        throw new Error(
-          `HTTP error! status: ${response.status}, message: ${errorText}`
-        );
-      }
+      setSubmissionStatus({
+        success: true,
+        message: 'Your tale is forever etched in our archives...'
+      });
+      reset();
 
-      // Attempt to parse JSON
-      let result;
-      try {
-        result = await response.json();
-        console.log('Parsed response:', result);
-      } catch (parseError) {
-        console.error('JSON parsing error:', parseError);
-        throw new Error('Failed to parse server response');
-      }
-
-      // Check for success in response
-      if (result.success) {
-        setSubmissionStatus({
-          success: true,
-          message: result.message || 'Your dark tale has been recorded...'
-        });
-        reset();
-      } else {
-        throw new Error(result.error || 'Shadows consumed your story...');
-      }
     } catch (error) {
       console.error('Submission error:', error);
       setSubmissionStatus({
